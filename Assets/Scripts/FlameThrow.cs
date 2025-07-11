@@ -45,7 +45,7 @@ public class FlameThrow : MonoBehaviour
     IEnumerator DelayedKill()
     {
         yield return new WaitForSeconds(0.1f); 
-        Vector3 newPos = transform.position + transform.up;
+        Vector3 newPos = transform.position + transform.up*0.75f;
         flameObj = Instantiate(flame, newPos, transform.rotation);
         flameCurrentlyActive = true;
     }

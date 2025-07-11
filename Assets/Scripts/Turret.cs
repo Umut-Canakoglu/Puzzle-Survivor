@@ -16,8 +16,10 @@ public class Turret : MonoBehaviour
     private Ray2D rayMiddle;
     private Ray2D rayThird;
     private Rigidbody2D rb;
+    private Animator animator;    
     void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         layersToHit = LayerMask.GetMask("Wall", "Player", "Enemy");
         transform = GetComponent<Transform>();
@@ -71,6 +73,7 @@ public class Turret : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         if (PlayerCheck())
         {
+            animator.SetTrigger("Shoot");
             Debug.Log(GameObject.FindGameObjectWithTag("Player").GetComponent<Radiation>().ArmorCurrent);
             if (GameObject.FindGameObjectWithTag("Player").GetComponent<Radiation>().ArmorCurrent)
             {

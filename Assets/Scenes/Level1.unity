@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &427983083
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 569667104754377431, guid: faac75772a145429d91b9779115df813, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 569667104754377431, guid: faac75772a145429d91b9779115df813, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 569667104754377431, guid: faac75772a145429d91b9779115df813, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 569667104754377431, guid: faac75772a145429d91b9779115df813, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 569667104754377431, guid: faac75772a145429d91b9779115df813, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 569667104754377431, guid: faac75772a145429d91b9779115df813, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 569667104754377431, guid: faac75772a145429d91b9779115df813, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 569667104754377431, guid: faac75772a145429d91b9779115df813, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 569667104754377431, guid: faac75772a145429d91b9779115df813, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 569667104754377431, guid: faac75772a145429d91b9779115df813, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759355501705150413, guid: faac75772a145429d91b9779115df813, type: 3}
+      propertyPath: m_Name
+      value: puzzleCharacter
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: faac75772a145429d91b9779115df813, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +394,7 @@ MonoBehaviour:
   tilePrefab: {fileID: 6934290316617659308, guid: b7a773bf3a4a640789f39feffbbb7ad4, type: 3}
   secondaryColor: {r: 0.5660378, g: 0.54734784, b: 0.54734784, a: 1}
   primaryColor: {r: 0.33333334, g: 0.33333334, b: 0.33333334, a: 1}
+  TestMode: 1
 --- !u!1 &873341670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,3 +1141,4 @@ SceneRoots:
   - {fileID: 811970293}
   - {fileID: 873341674}
   - {fileID: 1194444411}
+  - {fileID: 427983083}

@@ -8,6 +8,7 @@ public class TileSpawn : MonoBehaviour
     public GameObject tilePrefab;
     public Color secondaryColor;
     public Color primaryColor;
+    public bool TestMode;
     void Start()
     {
         for (int x = -8; x <= 8; x++)
@@ -30,7 +31,7 @@ public class TileSpawn : MonoBehaviour
     }
     void Update()
     {
-        if (GameObject.FindGameObjectWithTag("Player") == null)
+        if (GameObject.FindGameObjectWithTag("Player") == null && TestMode == false)
         {
             SceneManager.LoadScene("Menu", LoadSceneMode.Single);
         }

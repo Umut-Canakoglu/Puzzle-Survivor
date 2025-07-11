@@ -5,6 +5,10 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     public GameObject keyObj;
+    void Start()
+    {
+        transform.Rotate(0f, 0f, 90f, Space.Self); 
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
