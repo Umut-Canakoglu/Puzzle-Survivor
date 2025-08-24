@@ -10,4 +10,8 @@ public class LevelPlayer : MonoBehaviour
     {
         SceneManager.LoadScene("Level1", LoadSceneMode.Single);
     }
+    public void Level2Load()
+    {
+        SceneManager.LoadScene("Level2", LoadSceneMode.Single);
+    }
 }

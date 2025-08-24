@@ -4,27 +4,26 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Gate
+  - Radioactive
   - Flame
+  - Mask
   - Collider
+  - Armor
+  - Key
   - Zombie
   - Spike
   - Inventory
-  - Radioactive
   - Bar
-  - Mask
-  - Armor
-  - Key
-  - Gates
-  - Gate
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Wall
+  - Player
   - Water
   - UI
-  - Player
   - Enemy
+  - Wall
   - 
   - 
   - 
