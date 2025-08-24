@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638861522595786830
+  platformSettingsDirtyTick: 638860530113814470
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,38 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: gas_masked_guy_Frame_0
+  - name: gas_mask
     originalName: 
-    pivot: {x: 0.6, y: -0.16666667}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 23
-      y: 44
-      width: 10
-      height: 12
-    spriteID: 587c9de31a55e4507820856e142e2baa
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 23, y: 44}
-  - name: gas_masked_guy_Frame_1
-    originalName: 
-    pivot: {x: 0.54545456, y: -0.16666667}
+    pivot: {x: 0.4666667, y: -0.06666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 11
-      height: 12
-    spriteID: cc1bd11c4167e42f79ddf66f6d04ac32
+      width: 15
+      height: 15
+    spriteID: b32c36742398e4a869b94a7d613ad96d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -161,168 +141,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: gas_masked_guy_Frame_2
-    originalName: 
-    pivot: {x: 0.54545456, y: -0.16666667}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 24
-      width: 11
-      height: 12
-    spriteID: d50da65aa13ca4bacb9546d738759446
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 24}
-  - name: gas_masked_guy_Frame_3
-    originalName: 
-    pivot: {x: 0.54545456, y: -0.16666667}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 44
-      width: 11
-      height: 12
-    spriteID: 5309cb43a330a49d8a002307c9914121
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 44}
-  - name: gas_masked_guy_Frame_4
-    originalName: 
-    pivot: {x: 0.54545456, y: -0.16666667}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 23
-      y: 4
-      width: 11
-      height: 12
-    spriteID: 1b4d6b56b662a4f5e8ae05fb930cc8bb
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 23, y: 4}
-  - name: gas_masked_guy_Frame_5
-    originalName: 
-    pivot: {x: 0.54545456, y: -0.16666667}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 23
-      y: 24
-      width: 11
-      height: 12
-    spriteID: b73732b004f0b4d4398e727f59bdcdf8
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 23, y: 24}
   spriteSheetImportData:
-  - name: gas_masked_guy_0
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 44
-      width: 11
-      height: 12
-    spriteID: 70bdb3ecd6f3742e6aa4c047c38a211f
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: gas_masked_guy_1
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 23
-      y: 44
-      width: 10
-      height: 12
-    spriteID: ab9846d3a60cf42baa6bd5de51261de0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: gas_masked_guy_2
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 24
-      width: 11
-      height: 12
-    spriteID: 2d2fdad183fa04fbf811c08403468a77
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: gas_masked_guy_3
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 23
-      y: 24
-      width: 11
-      height: 12
-    spriteID: 40f20b74a389c446b800a980bb4fc4fe
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: gas_masked_guy_4
+  - name: gas_mask_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -331,29 +151,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 11
-      height: 12
-    spriteID: 324da25dda95746cf9fd7d88888683f1
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: gas_masked_guy_5
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 23
-      y: 4
-      width: 11
-      height: 12
-    spriteID: 306f0afb41f7c43f083a8fbc7e944484
+      width: 15
+      height: 15
+    spriteID: e5ab6e7f4ba9a4fba91e0745a944b1e7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -377,7 +177,7 @@ ScriptedImporter:
         y: 2
         width: 10
         height: 12
-      spriteId: 587c9de31a55e4507820856e142e2baa
+      spriteId: 6054b2593125344b78ed2333f741832d
     - name: gas_masked_guy_Frame_1
       frameIndex: 1
       cellRect:
@@ -385,7 +185,7 @@ ScriptedImporter:
         y: 2
         width: 11
         height: 12
-      spriteId: cc1bd11c4167e42f79ddf66f6d04ac32
+      spriteId: ba8b9806804b6470fb304cec5b1685d0
     - name: gas_masked_guy_Frame_2
       frameIndex: 2
       cellRect:
@@ -393,7 +193,7 @@ ScriptedImporter:
         y: 2
         width: 11
         height: 12
-      spriteId: d50da65aa13ca4bacb9546d738759446
+      spriteId: c71df6ff6dd7d427d8030c7769e75be2
     - name: gas_masked_guy_Frame_3
       frameIndex: 3
       cellRect:
@@ -401,7 +201,7 @@ ScriptedImporter:
         y: 2
         width: 11
         height: 12
-      spriteId: 5309cb43a330a49d8a002307c9914121
+      spriteId: 6aa4ad854e2ff466cae41ac7d18d4200
     - name: gas_masked_guy_Frame_4
       frameIndex: 4
       cellRect:
@@ -409,7 +209,7 @@ ScriptedImporter:
         y: 2
         width: 11
         height: 12
-      spriteId: 1b4d6b56b662a4f5e8ae05fb930cc8bb
+      spriteId: 02a2ddda892bb472aba75da2ad3f0a56
     - name: gas_masked_guy_Frame_5
       frameIndex: 5
       cellRect:
@@ -417,7 +217,7 @@ ScriptedImporter:
         y: 2
         width: 11
         height: 12
-      spriteId: b73732b004f0b4d4398e727f59bdcdf8
+      spriteId: f7da11ce8f0624be0811eaf7627cf185
     linkedCells: []
     parentIndex: -1
   platformSettings:
