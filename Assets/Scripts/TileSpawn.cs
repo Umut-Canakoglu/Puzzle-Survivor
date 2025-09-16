@@ -9,11 +9,15 @@ public class TileSpawn : MonoBehaviour
     public Color secondaryColor;
     public Color primaryColor;
     public bool TestMode;
+    public int yMax;
+    public int yMin;
+    public int xMax;
+    public int xMin;
     void Start()
     {
-        for (int x = -8; x <= 8; x++)
+        for (int x = xMin; x <= xMax; x++)
         {
-            for (int y = -4; y <= 4; y++)
+            for (int y = yMin; y <= yMax; y++)
             {
                 GameObject newTile = Instantiate(tilePrefab, new Vector3(x, y), Quaternion.identity);
                 SpriteRenderer rendererObject = newTile.GetComponent<SpriteRenderer>();

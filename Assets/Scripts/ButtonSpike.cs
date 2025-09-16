@@ -6,6 +6,28 @@ using UnityEngine;
 public class ButtonSpike : MonoBehaviour
 {
     public int waiter;
+    private Animator animator;
+    private bool clicked;
+    private int currentTurn;
+    private int waitTurn;
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+        clicked = false;
+    }
+    void Update()
+    {
+        currentTurn = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().turnCount;
+        if (!clicked)
+        {
+            waitTurn = currentTurn;
+        }
+        if (currentTurn - waitTurn >= waiter)
+        {
+            animator.SetBool("isClicked", false);
+            clicked = false;
+        }
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
@@ -18,6 +40,11 @@ public class ButtonSpike : MonoBehaviour
                 {
                     spike.GetComponent<Spike>().active = false;
                     spike.GetComponent<Spike>().customWait = waiter;
+                    if (!clicked)
+                    {
+                        animator.SetBool("isClicked", true);
+                        clicked = true;
+                    }
                 }
             }
         }

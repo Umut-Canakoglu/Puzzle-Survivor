@@ -7,7 +7,7 @@ public class Fire : MonoBehaviour
     public GameObject keyObj;
     void Start()
     {
-        transform.Rotate(0f, 0f, 90f, Space.Self); 
+        transform.Rotate(0f, 0f, 90f, Space.Self);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,9 +20,8 @@ public class Fire : MonoBehaviour
             }
             else
             {
-                Destroy(other.gameObject);
+                StartCoroutine(destroyEnumerator(other.gameObject));
             }
-
         }
         if (other.gameObject.tag == "Zombie")
         {
@@ -33,6 +32,11 @@ public class Fire : MonoBehaviour
     IEnumerator DelayedGone()
     {
         yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
+    }
+    IEnumerator destroyEnumerator(GameObject gameObject)
+    {
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 }

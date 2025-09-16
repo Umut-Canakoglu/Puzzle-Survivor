@@ -10,6 +10,10 @@ public class CharacterMovement : MonoBehaviour
     public int horizontal;
     public int vertical;
     private bool movement;
+    private int yMax;
+    private int yMin;
+    private int xMax;
+    private int xMin;
     void Start()
     {
         horizontal = 1;
@@ -17,6 +21,11 @@ public class CharacterMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         transform = GetComponent<Transform>();
         turnCount = 0;
+        GameObject tileSpawner = GameObject.FindGameObjectWithTag("Tile");
+        yMax = tileSpawner.GetComponent<TileSpawn>().yMax;
+        yMin = tileSpawner.GetComponent<TileSpawn>().yMin;
+        xMax = tileSpawner.GetComponent<TileSpawn>().xMax;
+        xMin = tileSpawner.GetComponent<TileSpawn>().xMin;
     }
     void Update()
     {
@@ -33,17 +42,20 @@ public class CharacterMovement : MonoBehaviour
             rb.rotation = 90f;
             horizontal = 0;
             vertical = 1;
-        } else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        }
+        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             rb.rotation = 270f;
             horizontal = 0;
             vertical = -1;
-        } else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             rb.rotation = 180f;
             horizontal = -1;
             vertical = 0;
-        } else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        }
+        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             rb.rotation = 0;
             horizontal = 1;
@@ -53,16 +65,18 @@ public class CharacterMovement : MonoBehaviour
         {
             float newY = posY + vertical;
             float newX = posX + horizontal;
-            if (newX < -8 || newX > 8 || newY < -4 || newY > 4)
+            if (newX < xMin || newX > xMax || newY < yMin || newY > yMax)
             {
                 newY = posY;
                 newX = posX;
-            } else {
+            }
+            else
+            {
                 movement = true;
                 foreach (Vector3 positionP in positions)
                 {
                     Vector3 newPos = new Vector3(newX, newY, transform.position.z);
-                    if(positionP == newPos)
+                    if (positionP == newPos)
                     {
                         movement = false;
                     }
@@ -70,7 +84,7 @@ public class CharacterMovement : MonoBehaviour
                 if (movement == true)
                 {
                     rb.MovePosition(new Vector3(newX, newY, 0f));
-                    turnCount ++;
+                    turnCount++;
                 }
             }
         }

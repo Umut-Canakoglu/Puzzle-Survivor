@@ -51,7 +51,7 @@ public class Spike : MonoBehaviour
                 }
                 else
                 {
-                    Destroy(other.gameObject);
+                    StartCoroutine(destroyEnumerator(other.gameObject));
                 }
             }
             if (other.gameObject.tag == "Zombie")
@@ -60,5 +60,10 @@ public class Spike : MonoBehaviour
                 Destroy(other.gameObject);
             }
         }
+    }
+    IEnumerator destroyEnumerator(GameObject gameObject)
+    {
+        yield return new WaitForSeconds(0.2f);
+        Destroy(gameObject);
     }
 }

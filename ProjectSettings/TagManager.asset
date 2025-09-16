@@ -15,6 +15,11 @@ TagManager:
   - Spike
   - Inventory
   - Bar
+  - Tile
+  - WallUp
+  - WallDown
+  - WallLeft
+  - WallRight
   layers:
   - Default
   - TransparentFX
