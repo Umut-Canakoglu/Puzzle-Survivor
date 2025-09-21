@@ -37,6 +37,8 @@ public class TileSpawn : MonoBehaviour
     {
         if (GameObject.FindGameObjectWithTag("Player") == null && TestMode == false)
         {
+            string currentScene = SceneManager.GetActiveScene().name;
+            GameManager.Instance.levelCompletes[currentScene] = true;
             SceneManager.LoadScene("Menu", LoadSceneMode.Single);
         }
     }

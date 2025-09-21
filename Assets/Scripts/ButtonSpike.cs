@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ButtonSpike : MonoBehaviour
@@ -17,10 +18,16 @@ public class ButtonSpike : MonoBehaviour
     }
     void Update()
     {
+        GameObject buttonTimer = GameObject.FindGameObjectWithTag("ButtonTimer");
         currentTurn = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().turnCount;
         if (!clicked)
         {
             waitTurn = currentTurn;
+            buttonTimer.GetComponent<TextMeshProUGUI>().text = "";
+        }
+        if (clicked)
+        {
+            buttonTimer.GetComponent<TextMeshProUGUI>().text = "Button Time: " + (waiter - (currentTurn - waitTurn)).ToString();
         }
         if (currentTurn - waitTurn >= waiter)
         {

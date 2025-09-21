@@ -18,15 +18,8 @@ public class Radiation : MonoBehaviour
     private int waitTimeArmor;
     private int currentTurn;
     public bool ArmorCurrent;
-    public bool KeyAvailable;
-    public bool KeyCurrent;
-    public GameObject gates;
-    public Sprite gateOpen;
-    public Sprite gateClose;
     void Start()
     {
-        KeyAvailable = false;
-        KeyCurrent = false;
         waitTimeMask = 0;
         waitTimeArmor = 0;
         currentTurn = 0;
@@ -34,14 +27,10 @@ public class Radiation : MonoBehaviour
         MaskCurrent = false;
         inventory = GameObject.FindGameObjectWithTag("Inventory");
         radioPuddles = GameObject.FindGameObjectsWithTag("Radioactive");
-        gates = GameObject.FindGameObjectWithTag("Gate");
         MaskAvailable = false;
         ArmorAvailable = false;
         InventoryAvailable = true;
         bar = GameObject.FindGameObjectWithTag("Bar");
-        gates.GetComponent<SpriteRenderer>().sprite = gateClose;
-        gates.GetComponent<SpriteRenderer>().flipX = true;
-        gates.GetComponent<SpriteRenderer>().flipY = false;
     }
     void Update()
     {
@@ -67,25 +56,15 @@ public class Radiation : MonoBehaviour
             waitTimeArmor = currentTurn;
             InventoryAvailable = true;
         }
-        if (Input.GetKeyDown(KeyCode.E) && KeyAvailable && Vector2.Distance(transform.position, gates.transform.position) < 1.5f)
-        {
-            KeyAvailable = false;
-            KeyCurrent = true;
-            gates.transform.position = gates.transform.position - gates.transform.up * 0.4f - gates.transform.right * 0.4f;
-            gates.GetComponent<SpriteRenderer>().sprite = gateOpen;
-            gates.GetComponent<SpriteRenderer>().flipX = false;
-            gates.GetComponent<SpriteRenderer>().flipY = true;
-            StartCoroutine(DelayedDestroy());
-        }
         if (currentTurn - waitTimeMask == 5 && MaskCurrent)
+        {
+            MaskCurrent = false;
+            foreach (GameObject puddle in radioPuddles)
             {
-                MaskCurrent = false;
-                foreach (GameObject puddle in radioPuddles)
-                {
-                    puddle.GetComponent<RadioActive>().maskOn = false;
-                }
-                animator.SetBool("MaskCurrently", false);
+                puddle.GetComponent<RadioActive>().maskOn = false;
             }
+            animator.SetBool("MaskCurrently", false);
+        }
         if (currentTurn - waitTimeArmor == 5 && ArmorCurrent)
         {
             ArmorCurrent = false;
@@ -119,11 +98,6 @@ public class Radiation : MonoBehaviour
                 ArmorAvailable = true;
                 GetRid(other.gameObject);
             }
-        }
-        if (other.gameObject.tag == "Key")
-        {
-            KeyAvailable = true;
-            Destroy(other.gameObject);
         }
     }
     private void GetRid(GameObject presentObject)

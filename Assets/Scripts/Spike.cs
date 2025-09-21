@@ -8,7 +8,7 @@ public class Spike : MonoBehaviour
     public Sprite spikeOff;
     public bool active;
     private SpriteRenderer spriteRenderer;
-    private int waitTurn;
+    public int waitTurn;
     private int currentTurn;
     private GameObject player;
     public GameObject keyObjSpike;

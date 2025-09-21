@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1463804597913116444}
   - component: {fileID: 2913816381168371752}
   - component: {fileID: 1392340626126823973}
+  - component: {fileID: 2754280908801609761}
   m_Layer: 6
   m_Name: puzzleCharacter
   m_TagString: Player
@@ -185,9 +186,6 @@ MonoBehaviour:
   radioPuddles: []
   emptyInventory: {fileID: 0}
   ArmorCurrent: 0
-  KeyAvailable: 0
-  KeyCurrent: 0
-  gates: {fileID: 0}
   gateOpen: {fileID: 2594488180071480993, guid: 0fc9dd17439814a379e4bdaa8c5f16e7, type: 3}
   gateClose: {fileID: 4652494404485256575, guid: 0fc9dd17439814a379e4bdaa8c5f16e7, type: 3}
 --- !u!95 &1392340626126823973
@@ -211,3 +209,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2754280908801609761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6759355501705150413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d974a940bf3a4f63ad44b108626e311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeyAvailable: 0
+  KeyCurrent: 0
+  gates: {fileID: 0}
+  gateOpen: {fileID: 2594488180071480993, guid: 0fc9dd17439814a379e4bdaa8c5f16e7, type: 3}
+  gateClose: {fileID: 4652494404485256575, guid: 0fc9dd17439814a379e4bdaa8c5f16e7, type: 3}
