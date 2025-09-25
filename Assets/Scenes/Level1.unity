@@ -124,8 +124,11 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!1001 &427983083
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!4 &37958639 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7966954133502771597, guid: 35715ace9468c4a159e34bc88750ec90, type: 3}
@@ -573,6 +576,9 @@ Transform:
   m_PrefabInstance: {fileID: 1021138280}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &432610159
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -581,6 +587,7 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     - target: {fileID: 569667104754377431, guid: faac75772a145429d91b9779115df813, type: 3}
       propertyPath: m_LocalPosition.x
@@ -627,6 +634,8 @@ PrefabInstance:
       value: puzzleCharacter
       objectReference: {fileID: 0}
 =======
+=======
+>>>>>>> Stashed changes
     - target: {fileID: 3368717130495505790, guid: 97551717bbf6f426a9fae3f00d8ec0e4, type: 3}
       propertyPath: m_Name
       value: Key
@@ -671,20 +680,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_SourcePrefab: {fileID: 100100000, guid: faac75772a145429d91b9779115df813, type: 3}
 =======
+=======
+>>>>>>> Stashed changes
   m_SourcePrefab: {fileID: 100100000, guid: 97551717bbf6f426a9fae3f00d8ec0e4, type: 3}
 --- !u!4 &480748867 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7966954133502771597, guid: 35715ace9468c4a159e34bc88750ec90, type: 3}
   m_PrefabInstance: {fileID: 217842506}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &519420028
 GameObject:
@@ -1213,8 +1231,11 @@ MonoBehaviour:
   secondaryColor: {r: 0.5660378, g: 0.54734784, b: 0.54734784, a: 1}
   primaryColor: {r: 0.33333334, g: 0.33333334, b: 0.33333334, a: 1}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   TestMode: 1
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!4 &814413958 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7966954133502771597, guid: 35715ace9468c4a159e34bc88750ec90, type: 3}
@@ -1281,6 +1302,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35715ace9468c4a159e34bc88750ec90, type: 3}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &873341670
 GameObject:
@@ -3356,12 +3380,18 @@ SceneRoots:
   - {fileID: 873341674}
   - {fileID: 1194444411}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - {fileID: 427983083}
 =======
+=======
+>>>>>>> Stashed changes
   - {fileID: 1913937494}
   - {fileID: 1755920323}
   - {fileID: 300151859}
   - {fileID: 292425768}
   - {fileID: 1360205834}
   - {fileID: 432610159}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
