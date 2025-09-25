@@ -8,17 +8,19 @@ public class Spike : MonoBehaviour
     public Sprite spikeOff;
     public bool active;
     private SpriteRenderer spriteRenderer;
-    private int waitTurn;
+    public int waitTurn;
     private int currentTurn;
     private GameObject player;
     public GameObject keyObjSpike;
+    public int customWait;
     void Start()
     {
+        customWait = 5;
         waitTurn = 0;
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = spikeOff;
+        spriteRenderer.sprite = spikeOn;
         player = GameObject.FindGameObjectWithTag("Player");
-        active = false;
+        active = true;
     }
     void Update()
     {
@@ -26,15 +28,15 @@ public class Spike : MonoBehaviour
         if (active)
         {
             spriteRenderer.sprite = spikeOn;
+            waitTurn = currentTurn;
         }
         else
         {
             spriteRenderer.sprite = spikeOff;
-            waitTurn = currentTurn;
         }
-        if (currentTurn - waitTurn >= 5)
+        if (currentTurn - waitTurn >= customWait)
         {
-            active = false;
+            active = true;
         }
     }
     void OnTriggerEnter2D(Collider2D other)
@@ -49,7 +51,7 @@ public class Spike : MonoBehaviour
                 }
                 else
                 {
-                    Destroy(other.gameObject);
+                    StartCoroutine(destroyEnumerator(other.gameObject));
                 }
             }
             if (other.gameObject.tag == "Zombie")
@@ -58,5 +60,10 @@ public class Spike : MonoBehaviour
                 Destroy(other.gameObject);
             }
         }
+    }
+    IEnumerator destroyEnumerator(GameObject gameObject)
+    {
+        yield return new WaitForSeconds(0.2f);
+        Destroy(gameObject);
     }
 }

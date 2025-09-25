@@ -102,6 +102,7 @@ MonoBehaviour:
   spikeOff: {fileID: -5187171002805487214, guid: cccd3eb0106e343dbb0beec2e1e8e7a4, type: 3}
   active: 0
   keyObjSpike: {fileID: 3368717130495505790, guid: 97551717bbf6f426a9fae3f00d8ec0e4, type: 3}
+  customWait: 0
 --- !u!61 &6775121585757679221
 BoxCollider2D:
   m_ObjectHideFlags: 0
