@@ -16,7 +16,10 @@ public class Turret : MonoBehaviour
     private Ray2D rayMiddle;
     private Ray2D rayThird;
     private Rigidbody2D rb;
-    private Animator animator;    
+    private Animator animator; 
+    private float startRotation;
+    public GameObject turretArea;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -34,6 +37,8 @@ public class Turret : MonoBehaviour
         rayMiddle = new Ray2D(middlePos, transform.up);
         rayFirst = new Ray2D(nextPos, transform.up);
         rayThird = new Ray2D(otherPos, transform.up);
+        startRotation = transform.eulerAngles.z;
+        createTurretArea(startRotation);
     }
     void Update()
     {
@@ -54,7 +59,7 @@ public class Turret : MonoBehaviour
             }
             else
             {
-                rb.rotation = 0f;
+                rb.rotation = startRotation;
             }
         }
         if (currentTurn - prevTurn == 3 && startActive)
@@ -84,7 +89,7 @@ public class Turret : MonoBehaviour
                 Destroy(GameObject.FindGameObjectWithTag("Player"));
             }
         }
-        rb.rotation = 0f;
+        rb.rotation = startRotation;
         startActive = false;
     }
     private bool PlayerCheck()
@@ -95,5 +100,17 @@ public class Turret : MonoBehaviour
         return (hitMiddle.collider != null && hitMiddle.collider.CompareTag("Player")) ||
                 (hitFirst.collider != null && hitFirst.collider.CompareTag("Player")) ||
                 (hitThird.collider != null && hitThird.collider.CompareTag("Player"));
+    }
+
+    void createTurretArea(float rot){
+        if(rot == 0){
+            Instantiate(turretArea, new Vector3(transform.position.x, transform.position.y + 2, 0f), Quaternion.Euler(0, 0, 180));
+        } else if(rot == 90){
+            Instantiate(turretArea, new Vector3(transform.position.x - 2, transform.position.y, 0f), Quaternion.Euler(0, 0, -90));
+        } else if(rot == 270){
+            Instantiate(turretArea, new Vector3(transform.position.x + 2, transform.position.y, 0f), Quaternion.Euler(0, 0, 90));
+        } else if(rot == 180){
+            Instantiate(turretArea, new Vector3(transform.position.x, transform.position.y - 2, 0f), Quaternion.Euler(0, 0, 0));
+        }
     }
 }
