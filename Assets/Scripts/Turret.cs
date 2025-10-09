@@ -89,9 +89,9 @@ public class Turret : MonoBehaviour
     }
     private bool PlayerCheck()
     {
-        RaycastHit2D hitMiddle = Physics2D.Raycast(rayMiddle.origin, rayMiddle.direction, 100f, layersToHit);
-        RaycastHit2D hitFirst = Physics2D.Raycast(rayFirst.origin, rayFirst.direction, 100f, layersToHit);
-        RaycastHit2D hitThird = Physics2D.Raycast(rayThird.origin, rayThird.direction, 100f, layersToHit);
+        RaycastHit2D hitMiddle = Physics2D.Raycast(rayMiddle.origin, rayMiddle.direction, 2f, layersToHit);
+        RaycastHit2D hitFirst = Physics2D.Raycast(rayFirst.origin, rayFirst.direction, 2f, layersToHit);
+        RaycastHit2D hitThird = Physics2D.Raycast(rayThird.origin, rayThird.direction, 2f, layersToHit);
         return (hitMiddle.collider != null && hitMiddle.collider.CompareTag("Player")) ||
                 (hitFirst.collider != null && hitFirst.collider.CompareTag("Player")) ||
                 (hitThird.collider != null && hitThird.collider.CompareTag("Player"));
