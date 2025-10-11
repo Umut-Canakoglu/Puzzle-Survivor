@@ -16,7 +16,7 @@ public class Turret : MonoBehaviour
     private Ray2D rayMiddle;
     private Ray2D rayThird;
     private Rigidbody2D rb;
-    private Animator animator; 
+    private Animator animator;
     private float startRotation;
     public GameObject turretArea;
 
@@ -102,14 +102,22 @@ public class Turret : MonoBehaviour
                 (hitThird.collider != null && hitThird.collider.CompareTag("Player"));
     }
 
-    void createTurretArea(float rot){
-        if(rot == 0){
+    private void createTurretArea(float rot)
+    {
+        if (rot == 0)
+        {
             Instantiate(turretArea, new Vector3(transform.position.x, transform.position.y + 2, 0f), Quaternion.Euler(0, 0, 180));
-        } else if(rot == 90){
+        }
+        else if (rot == 90)
+        {
             Instantiate(turretArea, new Vector3(transform.position.x - 2, transform.position.y, 0f), Quaternion.Euler(0, 0, -90));
-        } else if(rot == 270){
+        }
+        else if (rot == 270)
+        {
             Instantiate(turretArea, new Vector3(transform.position.x + 2, transform.position.y, 0f), Quaternion.Euler(0, 0, 90));
-        } else if(rot == 180){
+        }
+        else if (rot == 180)
+        {
             Instantiate(turretArea, new Vector3(transform.position.x, transform.position.y - 2, 0f), Quaternion.Euler(0, 0, 0));
         }
     }

@@ -13,8 +13,10 @@ public class TileSpawn : MonoBehaviour
     public int yMin;
     public int xMax;
     public int xMin;
+    private bool doorIsOpen;
     void Start()
     {
+        doorIsOpen = false;
         for (int x = xMin; x <= xMax; x++)
         {
             for (int y = yMin; y <= yMax; y++)
@@ -35,11 +37,17 @@ public class TileSpawn : MonoBehaviour
     }
     void Update()
     {
-        if (GameObject.FindGameObjectWithTag("Player") == null && TestMode == false)
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null && TestMode == false)
         {
             string currentScene = SceneManager.GetActiveScene().name;
-            GameManager.Instance.levelCompletes[currentScene] = true;
+            Debug.Log(currentScene);
+            GameManager.Instance.levelCompletes[currentScene] = doorIsOpen;
             SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+        }
+        else
+        {
+            doorIsOpen = player.GetComponent<Gates>().doorOpened;
         }
     }
 }

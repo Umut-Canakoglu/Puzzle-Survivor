@@ -11,26 +11,29 @@ public class ButtonSpike : MonoBehaviour
     private bool clicked;
     private int currentTurn;
     private int waitTurn;
+    private GameObject buttonTimer;
     void Start()
     {
         animator = GetComponent<Animator>();
         clicked = false;
+        buttonTimer = GameObject.FindGameObjectWithTag("ButtonTimer");
+        buttonTimer.GetComponent<TextMeshProUGUI>().text = "";
     }
     void Update()
     {
-        GameObject buttonTimer = GameObject.FindGameObjectWithTag("ButtonTimer");
         currentTurn = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().turnCount;
-        if (!clicked)
-        {
-            waitTurn = currentTurn;
-            buttonTimer.GetComponent<TextMeshProUGUI>().text = "";
-        }
         if (clicked)
         {
-            buttonTimer.GetComponent<TextMeshProUGUI>().text = "Button Time: " + (waiter - (currentTurn - waitTurn)).ToString();
+            int difference = waiter - currentTurn + waitTurn;
+            buttonTimer.GetComponent<TextMeshProUGUI>().text = "Button Time: " + difference.ToString();
+        }
+        else
+        {
+            waitTurn = currentTurn;
         }
         if (currentTurn - waitTurn >= waiter)
         {
+            buttonTimer.GetComponent<TextMeshProUGUI>().text = "";
             animator.SetBool("isClicked", false);
             clicked = false;
         }

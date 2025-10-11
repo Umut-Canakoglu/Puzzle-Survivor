@@ -9,6 +9,7 @@ public class Gates : MonoBehaviour
     public GameObject gates;
     public Sprite gateOpen;
     public Sprite gateClose;
+    public bool doorOpened;
     void Start()
     {
         KeyAvailable = false;
@@ -17,6 +18,7 @@ public class Gates : MonoBehaviour
         gates.GetComponent<SpriteRenderer>().sprite = gateClose;
         gates.GetComponent<SpriteRenderer>().flipX = true;
         gates.GetComponent<SpriteRenderer>().flipY = false;
+        doorOpened = false;
     }
     void Update()
     {
@@ -28,6 +30,7 @@ public class Gates : MonoBehaviour
             gates.GetComponent<SpriteRenderer>().sprite = gateOpen;
             gates.GetComponent<SpriteRenderer>().flipX = false;
             gates.GetComponent<SpriteRenderer>().flipY = true;
+            doorOpened = true;
             StartCoroutine(DelayedDestroy());
         }
     }
