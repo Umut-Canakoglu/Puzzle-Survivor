@@ -150,9 +150,6 @@ MonoBehaviour:
   currentTurn: 0
   prevTurn: 0
   turretArea: {fileID: 6755440131718352430, guid: 2eac384afc598400ca4f4441db8d089a, type: 3}
-  currentTurretArea: {fileID: 0}
-  normalColor: {r: 0.9647059, g: 1, b: 0.5137255, a: 0.41960785}
-  dangerousColor: {r: 1, g: 0.4198113, b: 0.4198113, a: 0.41960785}
 --- !u!50 &4452329333254188581
 Rigidbody2D:
   serializedVersion: 4

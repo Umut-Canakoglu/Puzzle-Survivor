@@ -19,11 +19,6 @@ public class Turret : MonoBehaviour
     private Animator animator;
     private float startRotation;
     public GameObject turretArea;
-    public GameObject currentTurretArea;
-    private GameObject triangleTurretArea;
-
-    public Color normalColor;
-    public Color dangerousColor;
 
     void Start()
     {
@@ -48,7 +43,6 @@ public class Turret : MonoBehaviour
     void Update()
     {
         currentTurn = player.GetComponent<CharacterMovement>().turnCount;
-        triangleTurretArea = currentTurretArea.gameObject.transform.GetChild(0).gameObject;
         if (PlayerCheck() && startActive == false && isActive == false)
         {
             startActive = true;
@@ -67,13 +61,6 @@ public class Turret : MonoBehaviour
             {
                 rb.rotation = startRotation;
             }
-        }
-        if(PlayerCheck() && currentTurn - prevTurn == 2){
-            currentTurretArea.GetComponent<SpriteRenderer>().color = dangerousColor;
-            triangleTurretArea.GetComponent<SpriteRenderer>().color = dangerousColor;
-        } else{
-            currentTurretArea.GetComponent<SpriteRenderer>().color = normalColor;
-            triangleTurretArea.GetComponent<SpriteRenderer>().color = normalColor;
         }
         if (currentTurn - prevTurn == 3 && startActive)
         {
@@ -119,19 +106,19 @@ public class Turret : MonoBehaviour
     {
         if (rot == 0)
         {
-            currentTurretArea = Instantiate(turretArea, new Vector3(transform.position.x, transform.position.y + 2, 0f), Quaternion.Euler(0, 0, 180));
+            Instantiate(turretArea, new Vector3(transform.position.x, transform.position.y + 2, 0f), Quaternion.Euler(0, 0, 180));
         }
         else if (rot == 90)
         {
-            currentTurretArea = Instantiate(turretArea, new Vector3(transform.position.x - 2, transform.position.y, 0f), Quaternion.Euler(0, 0, -90));
+            Instantiate(turretArea, new Vector3(transform.position.x - 2, transform.position.y, 0f), Quaternion.Euler(0, 0, -90));
         }
         else if (rot == 270)
         {
-            currentTurretArea = Instantiate(turretArea, new Vector3(transform.position.x + 2, transform.position.y, 0f), Quaternion.Euler(0, 0, 90));
+            Instantiate(turretArea, new Vector3(transform.position.x + 2, transform.position.y, 0f), Quaternion.Euler(0, 0, 90));
         }
         else if (rot == 180)
         {
-            currentTurretArea = Instantiate(turretArea, new Vector3(transform.position.x, transform.position.y - 2, 0f), Quaternion.Euler(0, 0, 0));
+            Instantiate(turretArea, new Vector3(transform.position.x, transform.position.y - 2, 0f), Quaternion.Euler(0, 0, 0));
         }
     }
 }
