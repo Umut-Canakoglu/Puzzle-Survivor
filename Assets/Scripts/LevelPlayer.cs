@@ -49,7 +49,7 @@ public class LevelPlayer : MonoBehaviour
         GameObject notification = GameObject.FindGameObjectWithTag("Notification");
         notification.GetComponent<TextMeshProUGUI>().text = "You need to complete " + levelName + " first";
         notification.GetComponent<TextMeshProUGUI>().color = Color.green;
-        float speed = 2f;
+        float speed = 1f;
         notification.GetComponent<Rigidbody2D>().velocity = speed * Vector2.up;
         StartCoroutine(Stop(notification));
     }
