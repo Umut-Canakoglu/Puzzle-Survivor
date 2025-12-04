@@ -14,8 +14,10 @@ public class CharacterMovement : MonoBehaviour
     private int yMin;
     private int xMax;
     private int xMin;
+    private float timeWait;
     void Start()
     {
+        timeWait = 0f;
         horizontal = 1;
         vertical = 0;
         rb = GetComponent<Rigidbody2D>();
@@ -29,6 +31,8 @@ public class CharacterMovement : MonoBehaviour
     }
     void Update()
     {
+        float timeDiff = Time.deltaTime;
+        timeWait += timeDiff;
         List<Vector3> positions = new List<Vector3>();
         GameObject[] allColliders = GameObject.FindGameObjectsWithTag("Collider");
         foreach (GameObject collider in allColliders)
@@ -61,30 +65,34 @@ public class CharacterMovement : MonoBehaviour
             horizontal = 1;
             vertical = 0;
         }
-        if (Input.GetKeyDown(KeyCode.X))
+        if (timeWait >= 0.5f)
         {
-            float newY = posY + vertical;
-            float newX = posX + horizontal;
-            if (newX < xMin || newX > xMax || newY < yMin || newY > yMax)
+            if (Input.GetKeyDown(KeyCode.X))
             {
-                newY = posY;
-                newX = posX;
-            }
-            else
-            {
-                movement = true;
-                foreach (Vector3 positionP in positions)
+                timeWait = 0f;
+                float newY = posY + vertical;
+                float newX = posX + horizontal;
+                if (newX < xMin || newX > xMax || newY < yMin || newY > yMax)
                 {
-                    Vector3 newPos = new Vector3(newX, newY, transform.position.z);
-                    if (positionP == newPos)
-                    {
-                        movement = false;
-                    }
+                    newY = posY;
+                    newX = posX;
                 }
-                if (movement == true)
+                else
                 {
-                    rb.MovePosition(new Vector3(newX, newY, 0f));
-                    turnCount++;
+                    movement = true;
+                    foreach (Vector3 positionP in positions)
+                    {
+                        Vector3 newPos = new Vector3(newX, newY, transform.position.z);
+                        if (positionP == newPos)
+                        {
+                            movement = false;
+                        }
+                    }
+                    if (movement == true)
+                    {
+                        rb.MovePosition(new Vector3(newX, newY, 0f));
+                        turnCount++;
+                    }
                 }
             }
         }
